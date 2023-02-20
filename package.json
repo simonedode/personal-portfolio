@@ -17,6 +17,8 @@
         "@maicol07/material-web-additions": "^1.1.0",
         "@material/web": "^1.0.0-pre.2",
         "@mdi/font": "^7.1.96",
+        "@mdi/js": "^7.1.96",
+        "@mdi/react": "^1.6.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     }
