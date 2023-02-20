@@ -22,3 +22,20 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 6px black;
 }
+
+//noinspection CssInvalidHtmlTagReference
+md-outlined-card {
+    --md-card-padding: 16px;
+}
+
+#home-card {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.container {
+    text-align: center;
+    h2 {
+        font-weight: normal;
+    }
+}
