@@ -1,1 +1,23 @@
 @import "https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css";
+
+body {
+    scroll-behavior: smooth;
+}
+
+#nav-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 70px;
+        box-shadow: 0 0 3px black;
+    }
+    h1 {
+        margin-left: 3%;
+    }
+}
+
+.profile {
+    border-radius: 50%;
+    box-shadow: 0 0 6px black;
+}
