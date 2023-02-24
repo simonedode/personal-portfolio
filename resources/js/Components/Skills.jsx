@@ -19,7 +19,7 @@ export default function Skills() {
         {id: 11, name: "Git", percentage: 85},
     ]);
 
-    const skillsCard = skills.map(skill =>
+    const skillsCard = skills?.map(skill =>
         <SkillCard key={skill.id} name={skill.name} percentage={skill.percentage} />
     );
 
