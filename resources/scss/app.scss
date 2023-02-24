@@ -1,7 +1,12 @@
 //noinspection CssUnknownTarget
 @import "https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css";
 
-body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -28,7 +33,7 @@ md-outlined-card {
     --md-card-padding: 16px;
 }
 
-#home-card {
+#home-card, #card-skills{
     width: 90%;
     margin-left: 5%;
 }
@@ -37,5 +42,13 @@ md-outlined-card {
     text-align: center;
     h2 {
         font-weight: normal;
+    }
+}
+
+#card-skills {
+    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, #ffffff));
+    text-align: center;
+    h2 {
+        font-size: 30px;
     }
 }

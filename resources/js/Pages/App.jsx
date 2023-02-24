@@ -2,6 +2,7 @@ import React from "react";
 import {mdiGithub, mdiInstagram, mdiLinkedin} from "@mdi/js";
 import NavBar from "../Components/NavBar";
 import CardHome from "../Components/CardHome";
+import Skills from "../Components/Skills";
 
 export default class App extends React.Component {
 
@@ -16,7 +17,7 @@ export default class App extends React.Component {
             navButtons: [
                 {id: 1, label: "HOME", href: "#home-card"},
                 {id: 2, label: "ABOUT", href: "#"},
-                {id: 3, label: "SKILLS", href: "#"},
+                {id: 3, label: "SKILLS", href: "#card-skills"},
                 {id: 4, label: "CONTACT", href: "#"},
             ],
         }
@@ -24,13 +25,14 @@ export default class App extends React.Component {
 
     render() {
         const name = "Simone Redighieri";
-        const avatar = "images/avatar.png";
+        const avatar =  "/images/avatar2.png";
 
         return (
             <>
                 <NavBar name={name} src={avatar} buttons={this.state.navButtons}/>
                 <CardHome name={name} info="Full Stack Web Developer | Engineer and Computer Science Student"
                           src={avatar} icons={this.state.icons}/>
+                <Skills />
             </>
         )
     }
