@@ -6,8 +6,35 @@
     padding: 0;
 }
 
-html {
+:root {
     scroll-behavior: smooth;
+    --bg-color: white;
+    --text-color: black;
+    --link-color: navy;
+    --nav-button-color: #6750a4;
+    --bg-home-color: #fffbfe;
+    --bg-skills-color: #ffffff;
+    --switch-color: black;
+}
+
+//TODO: Control the colors and buttons hover/ripple
+[data-theme="dark"] {
+    --bg-color: #282c34;
+    --text-color: white;
+    --link-color: cyan;
+    --nav-button-color: white;
+    --bg-home-color: #282c34;
+    --bg-skills-color: #282c34;
+    --switch-color: white;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+#theme {
+    color: var(--switch-color);
+    font-size: 40px;
 }
 
 #navbar {
@@ -15,7 +42,8 @@ html {
     position: fixed;
     transition: 0.3s linear;
     z-index: 40;
-    //background-color: azure;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .active{
@@ -52,10 +80,12 @@ md-outlined-card {
 #home-card, #card-skills{
     width: 90%;
     margin-left: 5%;
+    color: var(--text-color);
 }
 
 #home-card {
-    margin-top: 140px;
+    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-home-color)));
+    margin-top: 118px;
 }
 
 .container {
@@ -66,9 +96,13 @@ md-outlined-card {
 }
 
 #card-skills {
-    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, #ffffff));
+    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-skills-color)));
     text-align: center;
     h2 {
         font-size: 30px;
     }
+}
+
+.skill-card > span {
+    font-size: 18px;
 }

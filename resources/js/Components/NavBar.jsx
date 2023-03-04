@@ -1,6 +1,9 @@
-import '@maicol07/material-web-additions/layout-grid/layout-grid'
-import '@material/web/button/outlined-link-button'
+import '@maicol07/material-web-additions/layout-grid/layout-grid';
+import '@material/web/button/outlined-link-button';
+import '@material/web/switch/switch';
 import {useEffect, useState} from "react";
+import "@theme-toggles/react/css/Classic.css"
+import { Classic } from "@theme-toggles/react"
 
 export default function NavBar(props) {
 
@@ -12,6 +15,11 @@ export default function NavBar(props) {
     ]);
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [isToggled, setToggled] = useState(true);
+
+    useEffect(() => {
+        document.querySelector("body").setAttribute("data-theme", isToggled ? "light" : "dark");
+    }, [isToggled]);
 
     useEffect(() => {
         window.addEventListener("scroll", controlNavBar);
@@ -24,7 +32,8 @@ export default function NavBar(props) {
     };
 
     const navButtons = buttons?.map(button =>
-        <md-outlined-link-button key={button.id} label={button.label} href={button.href}></md-outlined-link-button>
+        <md-outlined-link-button style={{"--_label-text-color": "var(--md-outlined-button-label-text-color, var(--md-sys-color-primary, var(--nav-button-color))"}}
+                                 className="nav-button" key={button.id} label={button.label} href={button.href}></md-outlined-link-button>
     );
 
     return (
@@ -34,8 +43,11 @@ export default function NavBar(props) {
                     <img className="profile" src={props.src} alt="Personal image"/>
                     <h1>{props.name}</h1>
                 </div>
-                <div grid-span={7} grid-align="middle">
+                <div grid-span={6} grid-align="middle">
                     {navButtons}
+                </div>
+                <div grid-span={1} grid-align="middle">
+                    <Classic id="theme" duration={750} toggled={isToggled} toggle={setToggled}/>
                 </div>
             </md-layout-grid>
         </nav>

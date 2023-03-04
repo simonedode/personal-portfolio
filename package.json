@@ -19,6 +19,7 @@
         "@mdi/font": "^7.1.96",
         "@mdi/js": "^7.1.96",
         "@mdi/react": "^1.6.1",
+        "@theme-toggles/react": "^4.1.0",
         "rc-progress": "^3.4.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
