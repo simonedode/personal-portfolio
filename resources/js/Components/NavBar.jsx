@@ -15,10 +15,11 @@ export default function NavBar(props) {
     ]);
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-    const [isToggled, setToggled] = useState(true);
+    const [isToggled, setToggled] = useState((localStorage.getItem("selected-theme") ?? "light") === "light");
 
     useEffect(() => {
-        document.querySelector("body").setAttribute("data-theme", isToggled ? "light" : "dark");
+        localStorage.setItem("selected-theme", isToggled ? "light" : "dark");
+        document.querySelector("body").setAttribute("data-theme", localStorage.getItem("selected-theme"));
     }, [isToggled]);
 
     useEffect(() => {
