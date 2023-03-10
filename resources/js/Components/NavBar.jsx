@@ -9,8 +9,8 @@ export default function NavBar(props) {
 
     const [buttons, setButtons] = useState([
         {id: 1, label: "HOME", href: "#home-card"},
-        {id: 2, label: "ABOUT", href: "#"},
-        {id: 3, label: "SKILLS", href: "#card-skills"},
+        {id: 2, label: "SKILLS", href: "#card-skills"},
+        {id: 3, label: "ABOUT", href: "#about"},
         {id: 4, label: "CONTACT", href: "#"},
     ]);
     const [show, setShow] = useState(true);

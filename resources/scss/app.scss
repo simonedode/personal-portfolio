@@ -12,17 +12,19 @@
     --bg-home-color: #fffbfe;
     --bg-skills-color: #ffffff;
     --switch-color: black;
+    --bg-about-color: #ffffff;
 }
 
 //TODO: Control the colors and buttons hover/ripple
 [data-theme="dark"] {
     --bg-color: #282c34;
     --text-color: white;
-    --link-color: cyan;
+    --link-color: #0e93c3;
     --nav-button-color: white;
     --bg-home-color: #282c34;
     --bg-skills-color: #282c34;
     --switch-color: white;
+    --bg-about-color: #282c34;
 }
 
 body {
@@ -74,7 +76,7 @@ md-outlined-card {
     --md-card-padding: 16px;
 }
 
-#home-card, #card-skills{
+#home-card, #card-skills, #about{
     width: 90%;
     margin-left: 5%;
     color: var(--text-color);
@@ -103,4 +105,24 @@ md-outlined-card {
 
 .skill-card > span {
     font-size: 18px;
+}
+
+#about {
+    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-about-color)));
+    >h1 {
+        margin-top: 15px;
+    }
+    .about-item-title {
+        h2 {
+            font-weight: bold;
+            font-size: 25px;
+        }
+    }
+    .about-item-value {
+        a {
+            text-decoration: none;
+            color: var(--link-color);
+        }
+        font-size: 20px;
+    }
 }
