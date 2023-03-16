@@ -10,7 +10,9 @@ export default function About(props) {
     return (
         <md-outlined-card id="about">
             <h1 className="container">ABOUT</h1>
+            <md-layout-grid>
                 {about}
+            </md-layout-grid>
         </md-outlined-card>
     )
 }
