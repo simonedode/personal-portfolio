@@ -6,7 +6,7 @@ export default function AboutItem(props) {
     return (
         <>
                 <div grid-span={4} >
-                    <md-outlined-card class="container about-card" style={{"width": "100%"}}>
+                    <md-outlined-card class="container about-card">
                         <h2 className="about-item-title">{props.title}</h2>
                         <p className="about-item-value">{props.value}</p>
                     </md-outlined-card>
