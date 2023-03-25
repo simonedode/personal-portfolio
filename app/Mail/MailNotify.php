@@ -3,9 +3,7 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -29,7 +27,7 @@ class MailNotify extends Mailable
      *
      * @return Envelope
      */
-    public function envelope()
+    public function envelope(): Envelope
     {
         return new Envelope(
             from: $this->data['email'],
@@ -42,7 +40,7 @@ class MailNotify extends Mailable
      *
      * @return Content
      */
-    public function content()
+    public function content(): Content
     {
         return new Content(
             view: 'emails.name',
@@ -57,7 +55,7 @@ class MailNotify extends Mailable
      *
      * @return array
      */
-    public function attachments()
+    public function attachments(): array
     {
         return [];
     }
