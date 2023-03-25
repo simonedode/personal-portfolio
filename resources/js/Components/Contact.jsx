@@ -3,7 +3,7 @@ import FormContact from "./FormContact";
 import Icon from "@mdi/react";
 import {mdiRocketLaunch} from "@mdi/js";
 import ContactDetails from "./ContactDetails";
-export default function Contact(props) {
+export default function Contact() {
     return (
         <>
             <md-outlined-card id="contact">

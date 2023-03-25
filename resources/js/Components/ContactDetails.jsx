@@ -1,6 +1,5 @@
 import ContactDetailsItem from "./ContactDetailsItem";
 import {mdiEmail, mdiGithub, mdiHome, mdiInstagram, mdiLinkedin, mdiPhone} from "@mdi/js";
-import {useState} from "react";
 import Icon from "@mdi/react";
 
 export default function ContactDetails() {
