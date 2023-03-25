@@ -155,29 +155,47 @@ md-outlined-card {
         text-align: center;
         margin: 0 0 15px 0
     }
-    form {
-        width: 80%;
-        margin-left: 10%;
+    #contact-container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        md-outlined-text-field {
-            margin-bottom: 16px;
-            width: 100%;
+        justify-content: space-around;
+        #details {
+            margin: 0 5%;
+            h3 {
+                font-size: 1.5em;
+            }
+            .details-item {
+                display: flex;
+                align-items: center;
+                margin-top: 5px;
+            }
+            .details-item:last-of-type {
+                margin-bottom: 5px;
+            }
         }
-        md-filled-button {
-            align-self: end;
-        }
-        .onSuccess {
-            color: green;
-            margin-top: 10px;
+        form {
+            width: 80%;
+            margin-left: 10%;
             display: flex;
-            font-size: 18px;
-            width: 100%;
+            flex-direction: column;
             align-items: center;
-            background-color: #00ff002e;
-            padding: 10px;
-            justify-content: center;
+            md-outlined-text-field {
+                margin-bottom: 16px;
+                width: 100%;
+            }
+            md-filled-button {
+                align-self: end;
+            }
+            .onSuccess {
+                color: green;
+                margin-top: 10px;
+                display: flex;
+                font-size: 18px;
+                width: 100%;
+                align-items: center;
+                background-color: #00ff002e;
+                padding: 10px;
+                justify-content: center;
+            }
         }
     }
 }

@@ -10,8 +10,10 @@ export default function Contact(props) {
                 <h1>CONTACT</h1>
                 <h2>Send me a message!
                 <Icon id="icon-rocket" path={mdiRocketLaunch} size={1} style={{"color": "var(--text-color)"}}/></h2>
-                <FormContact />
-                <ContactDetails />
+                <div id="contact-container">
+                    <FormContact />
+                    <ContactDetails />
+                </div>
             </md-outlined-card>
         </>
     )
