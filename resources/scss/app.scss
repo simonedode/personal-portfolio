@@ -14,6 +14,7 @@
     --switch-color: black;
     --bg-about-color: #ffffff;
     --bg-about-item-color: #fffbfe;
+    --bg-contact-color: white;
 }
 
 //TODO: Control the colors and buttons hover/ripple
@@ -27,6 +28,7 @@
     --switch-color: white;
     --bg-about-color: #282c34;
     --bg-about-item-color: #282c34;
+    --bg-contact-color: #282c34;
 }
 
 body {
@@ -78,7 +80,7 @@ md-outlined-card {
     --md-card-padding: 16px;
 }
 
-#home-card, #card-skills, #about{
+#home-card, #card-skills, #about, #contact{
     width: 90%;
     margin-left: 5%;
     color: var(--text-color);
@@ -137,3 +139,51 @@ md-outlined-card {
         width: 100%;
     }
 }
+
+#contact {
+    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-contact-color)));
+    h1 {
+        text-align: center;
+        margin: 5px 0 11px;
+    }
+    h2 {
+        #icon-rocket {
+            margin-bottom: -3px;
+            text: red;
+        }
+        text-align: center;
+        margin: 0 0 15px 0
+    }
+    form {
+        width: 80%;
+        margin-left: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        md-outlined-text-field {
+            margin-bottom: 16px;
+            width: 100%;
+        }
+        md-filled-button {
+            align-self: end;
+        }
+        .onSuccess {
+            color: green;
+            margin-top: 10px;
+            display: flex;
+            font-size: 18px;
+            width: 100%;
+            align-items: center;
+            background-color: #00ff002e;
+            padding: 10px;
+            justify-content: center;
+        }
+    }
+}
+
+/*.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: #0008 !important;
+}
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline:hover{
+    border-color: #000 !important;
+}*/

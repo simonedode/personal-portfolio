@@ -3,6 +3,7 @@ import NavBar from "../Components/NavBar";
 import CardHome from "../Components/CardHome";
 import Skills from "../Components/Skills";
 import About from "../Components/About";
+import Contact from "../Components/Contact";
 
 export default function App() {
 
@@ -30,6 +31,7 @@ export default function App() {
                       src={avatar}/>
             <Skills />
             <About sections={about}/>
+            <Contact />
         </>
     )
 }

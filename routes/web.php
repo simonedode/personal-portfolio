@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class)->name('home');
+
+Route::post('/', [HomeController::class, 'sendEmail'])->name('send-email');

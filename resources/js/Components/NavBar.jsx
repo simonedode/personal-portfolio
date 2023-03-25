@@ -11,7 +11,7 @@ export default function NavBar(props) {
         {id: 1, label: "HOME", href: "#home-card"},
         {id: 2, label: "SKILLS", href: "#card-skills"},
         {id: 3, label: "ABOUT", href: "#about"},
-        {id: 4, label: "CONTACT", href: "#"},
+        {id: 4, label: "CONTACT", href: "#contact"},
     ]);
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
