@@ -47,6 +47,7 @@ body {
     z-index: 40;
     background-color: var(--bg-color);
     color: var(--text-color);
+    border: 1px var(--text-color) solid;
 }
 
 .active{
