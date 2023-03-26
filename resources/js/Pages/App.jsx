@@ -8,7 +8,7 @@ import Contact from "../Components/Contact";
 export default function App() {
 
     const name = "Simone Redighieri";
-    const avatar =  "/images/avatar2.png";
+    const avatar =  "/images/avatar.png";
     const about = [
         {id: 1, title: "Name", value: "Simone"},
         {id: 2, title: "Surname", value: "Redighieri"},
