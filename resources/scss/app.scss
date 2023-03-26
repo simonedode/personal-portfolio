@@ -90,13 +90,13 @@ md-outlined-card {
 #home-card {
     --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-home-color)));
     margin-top: 118px;
+    h2 {
+        font-weight: normal;
+    }
 }
 
 .container {
     text-align: center;
-    h2 {
-        font-weight: normal;
-    }
 }
 
 #card-skills {
@@ -118,26 +118,30 @@ md-outlined-card {
 
 #about {
     --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-about-color)));
-    >h1 {
-        margin-top: 15px;
+    h2 {
+        font-size: 28px;
     }
-    .about-item-title {
-        font-weight: bold;
-        font-size: 25px;
-        margin-bottom: 3px;
-        color: var(--text-color);
+    h2:nth-of-type(2) {
+        margin-bottom: 20px;
     }
-    .about-item-value {
+    h3 {
+        margin-bottom: 20px;
+        font-size: 21px;
+    }
+    p {
+        font-size: 18px;
+    }
+    #instruction {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
         a {
             text-decoration: none;
-            color: var(--link-color);
         }
-        font-size: 20px;
-        color: var(--text-color);
     }
-    .about-card {
-        --_container-color: var(--bg-about-item-color);
-        width: 100%;
+    md-divider {
+        width: 70%;
+        margin: 20px 0 20px 15%;
     }
 }
 
