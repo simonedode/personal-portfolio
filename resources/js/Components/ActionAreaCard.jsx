@@ -7,7 +7,7 @@ import React from "react";
 
 export default function ActionAreaCard(props) {
     return (
-        <Card sx={{ maxWidth: 345, margin: "0 2% 0" }} >
+        <Card sx={{ maxWidth: 345, margin: "0 2% 0" , width: "100%"}} >
             <CardActionArea>
                 <a href={props.href}>
                     <CardMedia
@@ -17,7 +17,7 @@ export default function ActionAreaCard(props) {
                         alt={props.alt}
                     />
                     <CardContent sx={{height: "100%"}}>
-                        <Typography gutterBottom variant="h5" component="div">
+                        <Typography gutterBottom variant="h6" component="div">
                             {props.title}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">

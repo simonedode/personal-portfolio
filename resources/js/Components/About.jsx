@@ -21,9 +21,9 @@ export default function About(props) {
                 I can count on a strong motivation and the desire to learn and grow professionally as a Web Developer
                     proactively contributing to the achievement of individual and team goals.</p>
                 <md-divider/>
-                <h2>INSTRUCTION {<Icon path={mdiSchool} size={1} style={{"marginBottom": "-3px"}}/>}</h2>
+                <h2>INSTRUCTION{<Icon path={mdiSchool} size={1} style={{"marginBottom": "-3px"}}/>}</h2>
                 <div id="instruction">
-                    <ActionAreaCard path="/images/serpieri.jpg" alt="Scientific High School image" title="Scientific High School A. Serpieri"
+                    <ActionAreaCard path="/images/serpieri.jpg" alt="Scientific High School image" title="Scientific High School - Alessandro Serpieri"
                                     body="2015 - 2020 | Completed" href="https://www.liceoserpieri.it/"/>
                     <ActionAreaCard path="/images/alma-mater-studiorum.jpeg" alt="University image" title="Alma Mater Studiorum - Engineer and Computer Science"
                                     body="2020 - | Pursuing" href="https://corsi.unibo.it/laurea/IngegneriaScienzeInformatiche/index.html"/>
