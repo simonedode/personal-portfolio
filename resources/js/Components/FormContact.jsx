@@ -1,9 +1,10 @@
 import '@material/web/textfield/outlined-text-field';
 import '@material/web/button/filled-button'
-import {mdiCheck, mdiCheckBold, mdiCheckCircle, mdiSend} from "@mdi/js";
+import '@material/web/dialog/dialog';
+import {mdiCheckCircle, mdiClose, mdiSend} from "@mdi/js";
 import Icon from "@mdi/react";
 import {useForm} from "@inertiajs/react";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {TextField} from "@mui/material";
 
 export default function FormContact() {
@@ -16,6 +17,11 @@ export default function FormContact() {
         body: '',
     })
 
+    useEffect(() => {
+        if (!isSuccess) {
+            document.querySelector('#dialog-success').close();
+        }
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,6 +31,9 @@ export default function FormContact() {
             onSuccess: () => {
                 setSuccess(true);
                 reset('email', 'subject', 'body')
+            },
+            onError: () => {
+                setSuccess(false);
             }
         });
     }
@@ -43,13 +52,22 @@ export default function FormContact() {
             <TextField style={{"marginBottom": "16px"}} id="body" label="BODY*" color="" fullWidth error={!!errors.body} helperText={errors.body}
                        multiline minRows={3} value={data.body} onInput={handleChange}/>
             {/*TODO: change with a button [type="submit"]*/}
-            <md-filled-button label="SEND" hasIcon="true" onClick={handleSubmit}>
+            <md-filled-button label="SEND" hasIcon onClick={handleSubmit}>
                 <Icon slot="icon" path={mdiSend} size={1}/>
             </md-filled-button>
-            {/*TODO: put a dialog for confirmation*/}
-            {isSuccess && <div className="onSuccess">
-                             Message sent with success <Icon id="icon-success" path={mdiCheckCircle} size={1} />
-                          </div>}
+            <md-dialog open={isSuccess} id="dialog-success">
+                <div className="dialog-header" slot="header">
+                    Message sent with success
+                </div>
+                <div className="onSuccess">
+                    <Icon id="icon-success" path={mdiCheckCircle} size={4} />
+                </div>
+                <div slot="footer">
+                    <md-filled-button label="CLOSE" hasIcon onClick={() => setSuccess(false)} dialogAction dialogFocus >
+                        <Icon slot="icon" path={mdiClose} size={1}/>
+                    </md-filled-button>
+                </div>
+            </md-dialog>
         </form>
     )
 

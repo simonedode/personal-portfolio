@@ -191,16 +191,12 @@ md-outlined-card {
             md-filled-button {
                 align-self: end;
             }
+            .dialog-header {
+                font-weight: bold;
+            }
             .onSuccess {
                 color: green;
-                margin-top: 10px;
-                display: flex;
-                font-size: 18px;
-                width: 100%;
-                align-items: center;
-                background-color: #00ff002e;
-                padding: 10px;
-                justify-content: center;
+                text-align: center;
             }
         }
     }
