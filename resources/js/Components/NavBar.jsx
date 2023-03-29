@@ -16,6 +16,7 @@ export default function NavBar(props) {
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isToggled, setToggled] = useState((localStorage.getItem("selected-theme") ?? "light") === "light");
+    const [isScrollByButton, setScrollByButton] = useState(false);
 
     useEffect(() => {
         localStorage.setItem("selected-theme", isToggled ? "light" : "dark");
@@ -23,18 +24,28 @@ export default function NavBar(props) {
     }, [isToggled]);
 
     useEffect(() => {
-        window.addEventListener("scroll", controlNavBar);
-        return () => window.removeEventListener("scroll", controlNavBar);
-    }, [lastScrollY]);
+        sectionsY = buttons.map(button => document.querySelector(button.href).offsetTop) ?? [];
+    })
+
+    let sectionsY = []
 
     const controlNavBar = () => {
-        window.scrollY > lastScrollY ? setShow(false) : setShow(true);
-        setLastScrollY(window.scrollY);
+        if (isScrollByButton && sectionsY.includes(Math.round(window.scrollY))) {
+            setShow(false);
+            setLastScrollY(window.scrollY - 1); //TODO: check it doesn't work without "-1"
+            setScrollByButton(false);
+        } else {
+            window.scrollY > lastScrollY ? setShow(false) : setShow(true);
+            setLastScrollY(window.scrollY);
+        }
     };
+
+    window.addEventListener("scroll", controlNavBar);
 
     const navButtons = buttons?.map(button =>
         <md-outlined-link-button style={{"--_label-text-color": "var(--md-outlined-button-label-text-color, var(--md-sys-color-primary, var(--nav-button-color))"}}
-                                 className="nav-button" key={button.id} label={button.label} href={button.href}></md-outlined-link-button>
+                                 className="nav-button" key={button.id} label={button.label} href={button.href}
+                                 onClick={() => setScrollByButton(true)}></md-outlined-link-button>
     );
 
     return (
