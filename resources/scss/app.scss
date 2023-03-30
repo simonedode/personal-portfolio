@@ -190,8 +190,12 @@ md-outlined-card {
             flex-direction: column;
             align-items: center;
             md-outlined-text-field {
+                --_outline-color: var(--text-color);
+                --_label-text-color: var(--text-color);
                 margin-bottom: 16px;
                 width: 100%;
+                border-color: var(--_outline-color);
+                color: var(--_label-text-color);
             }
             md-filled-button {
                 align-self: end;
