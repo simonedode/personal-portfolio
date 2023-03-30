@@ -52,8 +52,12 @@ export default function NavBar(props) {
         <nav id="navbar" className={show ? "active" : "hidden"}>
             <md-layout-grid>
                 <div id="nav-profile" grid-span={5}>
-                    <img className="profile" src={props.src} alt="Personal image"/>
-                    <h1>{props.name}</h1>
+                    <a href="#home-card" onClick={() => setScrollByButton(true)}>
+                        <img className="profile" src={props.src} alt="Personal image"/>
+                    </a>
+                    <a href="#home-card" onClick={() => setScrollByButton(true)}>
+                        <h1>{props.name}</h1>
+                    </a>
                 </div>
                 <div grid-span={6} grid-align="middle">
                     {navButtons}
