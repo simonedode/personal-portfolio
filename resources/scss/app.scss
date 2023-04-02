@@ -5,28 +5,34 @@
 
 :root {
     scroll-behavior: smooth;
+
+    --md-sys-color-primary: #1D005D;
+    --md-sys-color-on-primary: white;
+    --md-sys-color-surface: white;
+    --md-sys-color-on-surface: #1D005D;
+    --md-sys-color-on-surface-variant: #1D005D;
+
     --bg-color: #F5F5F5;
     --bg-secondary-color: white;
     --text-color: #1D005D;
     --text-secondary-color: rgba(0, 0, 0, 0.6);
-    --link-color: #6C38DF;
-    --progress-bar-color: #6C38DF8F;
-    --bg-components-color: #ffffff;
-    --bg-dialog: white;
-    --filled-button-color: #6750a4;
+    --link-color: #006BCAE8;
+    --progress-bar-color: #009BCAE8;
 }
 
-//TODO: Control the colors and buttons hover/ripple
 [data-theme="dark"] {
+    --md-sys-color-primary: #0071A9;
+    --md-sys-color-on-primary: white;
+    --md-sys-color-surface: #282c34;
+    --md-sys-color-on-surface: white;
+    --md-sys-color-on-surface-variant: white;
+
     --bg-color: #17191d;
     --bg-secondary-color: #383b42;
     --text-color: white;
     --text-secondary-color: #959393;
     --link-color: #0e93c3;
-    --progress-bar-color: #391E77C4;
-    --bg-components-color: #282c34;
-    --bg-dialog: black;
-    --filled-button-color: #17191d;
+    --progress-bar-color: #0071A9;
 }
 
 body {
@@ -91,7 +97,6 @@ md-outlined-card {
 }
 
 #home-card {
-    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-components-color)));
     margin-top: 118px;
     h2 {
         font-weight: normal;
@@ -103,7 +108,6 @@ md-outlined-card {
 }
 
 #card-skills {
-    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-components-color)));
     text-align: center;
     h2 {
         font-size: 30px;
@@ -120,7 +124,6 @@ md-outlined-card {
 }
 
 #about {
-    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-components-color)));
     h2 {
         font-size: 28px;
     }
@@ -152,7 +155,6 @@ md-outlined-card {
 }
 
 #contact {
-    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-components-color)));
     h1 {
         text-align: center;
         margin: 5px 0 11px;
@@ -188,19 +190,11 @@ md-outlined-card {
             flex-direction: column;
             align-items: center;
             md-outlined-text-field {
-                --_outline-color: var(--text-color);
-                --_label-text-color: var(--text-color);
                 margin-bottom: 16px;
                 width: 100%;
-                border-color: var(--_outline-color);
-                color: var(--_label-text-color);
             }
             md-filled-button {
                 align-self: end;
-                --_container-color: var(--filled-button-color);
-            }
-            #dialog-success {
-                --_container-color: var(--bg-dialog);
             }
             .dialog-header {
                 font-weight: bold;
