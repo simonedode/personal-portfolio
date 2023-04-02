@@ -43,8 +43,9 @@ class MailNotify extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.name',
+            view: 'mails.layout',
             with: [
+                'email' => $this->data['email'],
                 'body' => $this->data['body'],
             ]
         );
