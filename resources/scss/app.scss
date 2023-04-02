@@ -5,30 +5,28 @@
 
 :root {
     scroll-behavior: smooth;
-    --bg-color: white;
-    --text-color: black;
-    --link-color: navy;
-    --nav-button-color: #6750a4;
-    --bg-home-color: #fffbfe;
-    --bg-skills-color: #ffffff;
-    --switch-color: black;
-    --bg-about-color: #ffffff;
-    --bg-about-item-color: #fffbfe;
-    --bg-contact-color: white;
+    --bg-color: #F5F5F5;
+    --bg-secondary-color: white;
+    --text-color: #1D005D;
+    --text-secondary-color: rgba(0, 0, 0, 0.6);
+    --link-color: #6C38DF;
+    --progress-bar-color: #6C38DF8F;
+    --bg-components-color: #ffffff;
+    --bg-dialog: white;
+    --filled-button-color: #6750a4;
 }
 
 //TODO: Control the colors and buttons hover/ripple
 [data-theme="dark"] {
-    --bg-color: #282c34;
+    --bg-color: #17191d;
+    --bg-secondary-color: #383b42;
     --text-color: white;
+    --text-secondary-color: #959393;
     --link-color: #0e93c3;
-    --nav-button-color: white;
-    --bg-home-color: #282c34;
-    --bg-skills-color: #282c34;
-    --switch-color: white;
-    --bg-about-color: #282c34;
-    --bg-about-item-color: #282c34;
-    --bg-contact-color: #282c34;
+    --progress-bar-color: #391E77C4;
+    --bg-components-color: #282c34;
+    --bg-dialog: black;
+    --filled-button-color: #17191d;
 }
 
 body {
@@ -36,7 +34,7 @@ body {
 }
 
 #theme {
-    color: var(--switch-color);
+    color: var(--text-color);
     font-size: 40px;
 }
 
@@ -93,7 +91,7 @@ md-outlined-card {
 }
 
 #home-card {
-    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-home-color)));
+    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-components-color)));
     margin-top: 118px;
     h2 {
         font-weight: normal;
@@ -105,7 +103,7 @@ md-outlined-card {
 }
 
 #card-skills {
-    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-skills-color)));
+    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-components-color)));
     text-align: center;
     h2 {
         font-size: 30px;
@@ -122,7 +120,7 @@ md-outlined-card {
 }
 
 #about {
-    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-about-color)));
+    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-components-color)));
     h2 {
         font-size: 28px;
     }
@@ -154,7 +152,7 @@ md-outlined-card {
 }
 
 #contact {
-    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-contact-color)));
+    --_container-color: var(--md-card-container-color, var(--md-sys-color-surface, var(--bg-components-color)));
     h1 {
         text-align: center;
         margin: 5px 0 11px;
@@ -199,9 +197,14 @@ md-outlined-card {
             }
             md-filled-button {
                 align-self: end;
+                --_container-color: var(--filled-button-color);
+            }
+            #dialog-success {
+                --_container-color: var(--bg-dialog);
             }
             .dialog-header {
                 font-weight: bold;
+                color: var(--text-color);
             }
             .onSuccess {
                 color: green;
@@ -210,10 +213,3 @@ md-outlined-card {
         }
     }
 }
-
-/*.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
-    border-color: #0008 !important;
-}
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline:hover{
-    border-color: #000 !important;
-}*/

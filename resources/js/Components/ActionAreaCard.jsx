@@ -16,11 +16,11 @@ export default function ActionAreaCard(props) {
                         image={props.path}
                         alt={props.alt}
                     />
-                    <CardContent sx={{height: "100%"}}>
-                        <Typography gutterBottom variant="h6" component="div">
+                    <CardContent sx={{background: "var(--bg-secondary-color)"}}>
+                        <Typography gutterBottom variant="h6" component="div" color="var(--link-color)">
                             {props.title}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="body2" color="var(--text-secondary-color)">
                             {props.body}
                         </Typography>
                     </CardContent>

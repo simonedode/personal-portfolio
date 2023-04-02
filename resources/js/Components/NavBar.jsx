@@ -43,7 +43,7 @@ export default function NavBar(props) {
     window.addEventListener("scroll", controlNavBar);
 
     const navButtons = buttons?.map(button =>
-        <md-outlined-link-button style={{"--_label-text-color": "var(--md-outlined-button-label-text-color, var(--md-sys-color-primary, var(--nav-button-color))"}}
+        <md-outlined-link-button style={{"--_label-text-color": "var(--md-outlined-button-label-text-color, var(--md-sys-color-primary, var(--text-color))"}}
                                  className="nav-button" key={button.id} label={button.label} href={button.href}
                                  onClick={() => setScrollByButton(true)}></md-outlined-link-button>
     );
