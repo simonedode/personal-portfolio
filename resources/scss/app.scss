@@ -35,6 +35,10 @@
     --progress-bar-color: #0071A9;
 }
 
+#home-card, #card-skills, #about, #contact {
+    margin-bottom: 30px;
+}
+
 body {
     background-color: var(--bg-color);
 }
@@ -115,12 +119,15 @@ md-outlined-card {
     }
     .skill-image {
         width: 35px;
-        margin-bottom: -8px;
+        height: 35px;
     }
 }
 
-.skill-card > span {
+.skill-card  span {
     font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #about {
