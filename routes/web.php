@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class)->name('home');
+Route::get('/', HomeController::class)
+    ->name('home');
 
 Route::post('/', [HomeController::class, 'sendEmail'])->name('send-email');
+
+Route::post('/lang/{locale}', static function ($locale) {
+    session()->put('locale', $locale);
+    app()->setLocale($locale);
+    return redirect()->route('home');
+})->whereIn('locale', ['en', 'it']);

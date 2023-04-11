@@ -6,6 +6,7 @@ use App\Mail\MailNotify;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Inertia\Inertia;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,7 @@ class HomeController extends Controller
 
     public function __invoke()
     {
+        Inertia::share('locale', app()->getLocale());
         return inertia('App');
     }
 
