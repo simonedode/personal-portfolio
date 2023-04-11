@@ -3,7 +3,9 @@ import '@maicol07/material-web-additions/layout-grid/layout-grid';
 import SkillCard from "./SkillCard";
 import {useState} from "react";
 
-export default function Skills() {
+export default function Skills(props) {
+
+    const t = props.translate;
 
     const [skills, setSkills] = useState([
         {id: 1, name: "HTML5", percentage: 95, src: "images/skills/html.png"},
@@ -25,7 +27,7 @@ export default function Skills() {
 
     return (
         <md-outlined-card id="card-skills">
-            <h2>SKILLS</h2>
+            <h2>{t("SKILLS")}</h2>
             <md-layout-grid>
                 {skillsCard}
             </md-layout-grid>

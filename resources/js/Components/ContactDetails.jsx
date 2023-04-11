@@ -2,12 +2,14 @@ import ContactDetailsItem from "./ContactDetailsItem";
 import {mdiEmail, mdiGithub, mdiHome, mdiInstagram, mdiLinkedin, mdiPhone} from "@mdi/js";
 import Icon from "@mdi/react";
 
-export default function ContactDetails() {
+export default function ContactDetails(props) {
+
+    const t = props.translate;
 
     const details = [
         {path: mdiEmail, value: "simonedode10@gmail.com"},
         {path: mdiPhone, value: "3420079367"},
-        {path: mdiHome, value: "Via Pastore n°26, Rimini, Italy"}
+        {path: mdiHome, value: t("Via Pastore n°26, Rimini, Italy")}
     ];
 
     const iconButtons = ([
@@ -24,9 +26,9 @@ export default function ContactDetails() {
 
     return (
         <div id="details">
-            <h3>Contact Details</h3>
-            {details.map((detail, key) => <ContactDetailsItem key={key} path={detail.path} value={detail.value}/>)}
-            <h3>Social</h3>
+            <h3>{t("Contact Details")}</h3>
+                {details.map((detail, key) => <ContactDetailsItem key={key} path={detail.path} value={detail.value}/>)}
+            <h3>{t("Social")}</h3>
             {social}
         </div>
     )

@@ -7,6 +7,8 @@ import {useState} from "react";
 
 export default function CardHome(props) {
 
+    const t = props.translate;
+
     const [icons, setIcons] = useState([
         {id: 1, path: mdiGithub, href: "https://github.com/simonedode"},
         {id: 2, path: mdiLinkedin, href: "https://www.linkedin.com/in/simone-redighieri-b4aa31252"},
@@ -23,7 +25,7 @@ export default function CardHome(props) {
         <md-outlined-card id="home-card">
             <md-layout-grid>
                 <div id="home-image" className="container" grid-span={6}>
-                    <img className="profile" src={props.src} alt="Personal image"/>
+                    <img className="profile" src={props.src} alt={t("profile image")}/>
                 </div>
                 <div className="container" grid-span={6}>
                     <h1>{props.name}</h1>

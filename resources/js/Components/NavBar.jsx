@@ -4,19 +4,24 @@ import '@material/web/switch/switch';
 import {useEffect, useState} from "react";
 import "@theme-toggles/react/css/Classic.css"
 import { Classic } from "@theme-toggles/react"
+import LanguagePicker from "./LanguagePicker";
 
 export default function NavBar(props) {
 
-    const [buttons, setButtons] = useState([
-        {id: 1, label: "HOME", href: "#home-card"},
-        {id: 2, label: "SKILLS", href: "#card-skills"},
-        {id: 3, label: "ABOUT", href: "#about"},
-        {id: 4, label: "CONTACT", href: "#contact"},
-    ]);
+    const t = props.translate;
+
+    const buttons = [
+        {id: 1, label: t("HOME"), href: "#home-card"},
+        {id: 2, label: t("SKILLS"), href: "#card-skills"},
+        {id: 3, label: t("ABOUT"), href: "#about"},
+        {id: 4, label: t("CONTACT"), href: "#contact"},
+    ];
+
     const [show, setShow] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isToggled, setToggled] = useState((localStorage.getItem("selected-theme") ?? "light") === "light");
     const [isScrollByButton, setScrollByButton] = useState(false);
+
 
     useEffect(() => {
         localStorage.setItem("selected-theme", isToggled ? "light" : "dark");
@@ -52,7 +57,7 @@ export default function NavBar(props) {
             <md-layout-grid>
                 <div id="nav-profile" grid-span={5}>
                     <a href="#home-card" onClick={() => setScrollByButton(true)}>
-                        <img className="profile" src={props.src} alt="Personal image"/>
+                        <img className="profile" src={props.src} alt={t("alt")}/>
                     </a>
                     <a href="#home-card" onClick={() => setScrollByButton(true)}>
                         <h1>{props.name}</h1>
@@ -62,6 +67,7 @@ export default function NavBar(props) {
                     {navButtons}
                 </div>
                 <div grid-span={1} grid-align="middle">
+                    <LanguagePicker translate={t} setLang={props.setLang} loaded={props.loaded}/>
                     <Classic id="theme" duration={750} toggled={isToggled} toggle={setToggled}/>
                 </div>
             </md-layout-grid>
