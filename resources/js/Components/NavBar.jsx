@@ -1,6 +1,5 @@
 import '@maicol07/material-web-additions/layout-grid/layout-grid';
-import '@material/web/button/outlined-link-button';
-import '@material/web/switch/switch';
+import '@material/web/button/outlined-button';
 import {useEffect, useState} from "react";
 import "@theme-toggles/react/css/Classic.css"
 import { Classic } from "@theme-toggles/react"
@@ -48,8 +47,8 @@ export default function NavBar(props) {
     window.addEventListener("scroll", controlNavBar);
 
     const navButtons = buttons?.map(button =>
-        <md-outlined-link-button className="nav-button" key={button.id} label={button.label} href={button.href}
-                                 onClick={() => setScrollByButton(true)}></md-outlined-link-button>
+        <md-outlined-button className="nav-button" key={button.id} href={button.href}
+                                 onClick={() => setScrollByButton(true)}>{button.label}</md-outlined-button>
     );
 
     return (

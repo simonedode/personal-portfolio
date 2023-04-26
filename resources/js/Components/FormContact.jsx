@@ -65,7 +65,8 @@ export default function FormContact(props) {
                     <Icon id="icon-success" path={mdiCheckCircle} size={4} />
                 </div>
                 <div slot="footer">
-                    <md-filled-button label={t("CLOSE")} hasIcon onClick={() => setSuccess(false)} dialogAction dialogFocus >
+                    <md-filled-button hasIcon onClick={() => setSuccess(false)} dialogAction dialogFocus>
+                        {t("CLOSE")}
                         <Icon slot="icon" path={mdiClose} size={1}/>
                     </md-filled-button>
                 </div>
