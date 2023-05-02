@@ -16,7 +16,7 @@
         "@emotion/react": "^11.10.6",
         "@emotion/styled": "^11.10.6",
         "@inertiajs/react": "^1.0.2",
-        "@maicol07/material-web-additions": "^1.1.0",
+        "@maicol07/material-web-additions": "^1.2.12",
         "@material/web": "^1.0.0-pre.7",
         "@mdi/font": "^7.1.96",
         "@mdi/js": "^7.1.96",
