@@ -1,6 +1,6 @@
 import '@maicol07/material-web-additions/card/outlined-card';
 import '@maicol07/material-web-additions/layout-grid/layout-grid';
-import '@material/web/iconbutton/outlined-icon-button';
+import '@material/web/iconbutton/standard-icon-button';
 import Icon from '@mdi/react';
 import {mdiGithub, mdiInstagram, mdiLinkedin} from "@mdi/js";
 import {useState} from "react";
@@ -16,9 +16,9 @@ export default function CardHome(props) {
     ]);
 
     const iconButtons = icons?.map(icon =>
-        <md-outlined-icon-button key={icon.id} href={icon.href}>
+        <md-standard-icon-button key={icon.id} href={icon.href}>
             <Icon path={icon.path} size={1} style={{"color": "var(--text-color)"}}/>
-        </md-outlined-icon-button>
+        </md-standard-icon-button>
     );
 
     return (

@@ -19,9 +19,9 @@ export default function ContactDetails(props) {
     ]);
 
     const social = iconButtons?.map((icon, key) =>
-        <md-standard-link-icon-button key={key} linkHref={icon.href}>
+        <md-standard-icon-button key={key} href={icon.href}>
             <Icon path={icon.path} size={1} style={{"color": "var(--text-color)"}}/>
-        </md-standard-link-icon-button>
+        </md-standard-icon-button>
     );
 
     return (

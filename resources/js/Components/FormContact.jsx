@@ -54,7 +54,8 @@ export default function FormContact(props) {
             <TextField style={{"marginBottom": "16px"}} id="body" label={t("BODY*")} fullWidth error={!!errors.body} helperText={errors.body}
                        multiline minRows={3} value={data.body} onInput={handleChange}/>
             {/*TODO: change with a button [type="submit"]*/}
-            <md-filled-button label={t("SEND")} hasIcon onClick={handleSubmit}>
+            <md-filled-button hasIcon onClick={handleSubmit}>
+                {t("SEND")}
                 <Icon slot="icon" path={mdiSend} size={1}/>
             </md-filled-button>
             <md-dialog open={isSuccess} id="dialog-success">
