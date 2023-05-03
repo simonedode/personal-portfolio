@@ -26,6 +26,7 @@
         "laravel-react-i18n": "^1.0.4",
         "rc-progress": "^3.4.1",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-flagkit": "^2.0.4"
     }
 }
