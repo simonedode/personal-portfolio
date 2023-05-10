@@ -34,16 +34,15 @@ export default function LanguagePicker(props) {
 
     return (
         <>
-            {/*TODO: fix the "selected" attribute*/}
-            <md-outlined-select label={t('Language')} hasLeadingIcon onInput={handleChangeLang} style={{minWidth: "170px"}}>
+            <md-outlined-select hasLeadingIcon onInput={handleChangeLang} style={{minWidth: "auto"}} value={language}>
                 <div slot="leadingicon">{<Flag country={language === "en" ? "GB" : "IT"}/>}</div>
                 <div slot="trailingicon">{<Icon path={mdiTriangleSmallDown} size={1}/>}</div>
-                <md-select-option value="en" headline={t('English')} selected={language === "en"}>
+                <md-select-option value="en" headline={t('English')} /*selected={language === "en"}*/>
                     <div slot="start" style={{marginLeft: "10px", marginTop: "2px"}}>
                         <Flag country="GB"/>
                     </div>
                 </md-select-option>
-                <md-select-option value="it" headline={t('Italian')} selected={language === "it"}>
+                <md-select-option value="it" headline={t('Italian')} >
                     <div slot="start" style={{marginLeft: "10px", marginTop: "2px"}}>
                         <Flag country="IT"/>
                     </div>
