@@ -54,7 +54,7 @@ export default function NavBar(props) {
     return (
         <nav id="navbar" className={show ? "active" : "hidden"}>
             <md-layout-grid>
-                <div id="nav-profile" grid-span={4}>
+                <div id="nav-profile" grid-span={3}>
                     <a href="#home-card" onClick={() => setScrollByButton(true)}>
                         <img className="profile" src={props.src} alt={t("alt")}/>
                     </a>
@@ -62,10 +62,10 @@ export default function NavBar(props) {
                         <h1>{props.name}</h1>
                     </a>
                 </div>
-                <div grid-span={6} grid-align="middle">
+                <div className="container" grid-span={6} grid-align="middle">
                     {navButtons}
                 </div>
-                <div grid-span={2} grid-align="middle">
+                <div className="container" grid-span={3} grid-align="middle">
                     <div id="container-top">
                         <LanguagePicker translate={t} setLang={props.setLang} loaded={props.loaded}/>
                         <Classic id="theme" duration={750} toggled={isToggled} toggle={setToggled}/>

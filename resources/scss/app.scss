@@ -58,7 +58,7 @@ body {
     border: 1px var(--text-color) solid;
     #container-top {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
     }
 }
 
@@ -75,7 +75,9 @@ body {
         text-decoration: none;
         color: var(--text-color);
     }
-    white-space: nowrap;
+    a:nth-child(2) {
+        width: 100%;
+    }
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,6 +87,7 @@ body {
     }
     h1 {
         margin-left: 3%;
+        font-size: 20px;
     }
 }
 
