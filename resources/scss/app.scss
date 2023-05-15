@@ -79,7 +79,6 @@ body {
         width: 100%;
     }
     display: flex;
-    justify-content: center;
     align-items: center;
     img {
         width: 70px;
@@ -138,6 +137,9 @@ md-outlined-card {
 }
 
 #about {
+    h1 {
+        margin-top: 15px;
+    }
     h2 {
         font-size: 28px;
     }
@@ -171,7 +173,7 @@ md-outlined-card {
 #contact {
     h1 {
         text-align: center;
-        margin: 5px 0 11px;
+        margin: 15px 0 11px;
     }
     h2 {
         #icon-rocket {
