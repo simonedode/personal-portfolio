@@ -1,0 +1,36 @@
+#navbar {
+    width: 100%;
+    position: fixed;
+    transition: 0.3s linear;
+    z-index: 40;
+    background-color: var(--bg-color);
+    color: var(--md-sys-color-on-surface);
+    border: 1px var(--md-sys-color-on-surface) solid;
+    #container-top {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #theme {
+        color: var(--md-sys-color-on-surface);
+        font-size: 40px;
+    }
+    #nav-profile {
+        a {
+            text-decoration: none;
+            color: var(--md-sys-color-on-surface);
+        }
+        a:nth-child(2) {
+            width: 100%;
+        }
+        display: flex;
+        align-items: center;
+        img {
+            width: 70px;
+            box-shadow: 0 0 3px black;
+        }
+        h1 {
+            margin-left: 3%;
+            font-size: 20px;
+        }
+    }
+}

@@ -1,3 +1,9 @@
+@import "navbar";
+@import "home";
+@import "skills";
+@import "about";
+@import "contact";
+
 * {
     margin: 0;
     padding: 0;
@@ -51,51 +57,12 @@ body {
     background-color: var(--bg-color);
 }
 
-#theme {
-    color: var(--text-color);
-    font-size: 40px;
-}
-
-#navbar {
-    width: 100%;
-    position: fixed;
-    transition: 0.3s linear;
-    z-index: 40;
-    background-color: var(--bg-color);
-    color: var(--md-sys-color-on-surface);
-    border: 1px var(--md-sys-color-on-surface) solid;
-    #container-top {
-        display: flex;
-        justify-content: space-evenly;
-    }
-}
-
 .active{
     top: 0;
 }
 
 .hidden{
     top: -123px;
-}
-
-#nav-profile {
-    a {
-        text-decoration: none;
-        color: var(--md-sys-color-on-surface);
-    }
-    a:nth-child(2) {
-        width: 100%;
-    }
-    display: flex;
-    align-items: center;
-    img {
-        width: 70px;
-        box-shadow: 0 0 3px black;
-    }
-    h1 {
-        margin-left: 3%;
-        font-size: 20px;
-    }
 }
 
 .profile {
@@ -114,120 +81,6 @@ md-outlined-card {
     color: var(--md-sys-color-on-surface);
 }
 
-#home-card {
-    margin-top: 118px;
-    h2 {
-        font-weight: normal;
-    }
-}
-
 .container {
     text-align: center;
-}
-
-#card-skills {
-    text-align: center;
-    h2 {
-        font-size: 30px;
-        margin-top: 15px;
-    }
-    .skill-image {
-        width: 35px;
-        height: 35px;
-    }
-}
-
-.skill-card  span {
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#about {
-    h1 {
-        margin-top: 15px;
-    }
-    h2 {
-        font-size: 28px;
-    }
-    h2:nth-of-type(2) {
-        margin-bottom: 20px;
-    }
-    h3 {
-        margin-bottom: 20px;
-        font-size: 21px;
-    }
-    p {
-        font-size: 18px;
-        text-align: justify;
-        width: 70%;
-        margin-left: 15%;
-    }
-    #instruction {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-        a {
-            text-decoration: none;
-        }
-    }
-    md-divider {
-        width: 70%;
-        margin: 20px 0 20px 15%;
-    }
-}
-
-#contact {
-    h1 {
-        text-align: center;
-        margin: 15px 0 11px;
-    }
-    h2 {
-        #icon-rocket {
-            margin-bottom: -3px;
-        }
-        text-align: center;
-        margin: 0 0 15px 0
-    }
-    #contact-container {
-        display: flex;
-        justify-content: space-around;
-        #details {
-            margin: 0 5%;
-            h3 {
-                font-size: 1.5em;
-            }
-            .details-item {
-                display: flex;
-                align-items: center;
-                margin-top: 5px;
-            }
-            .details-item:last-of-type {
-                margin-bottom: 5px;
-            }
-        }
-        form {
-            width: 80%;
-            margin-left: 10%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            md-outlined-text-field {
-                margin-bottom: 16px;
-                width: 100%;
-            }
-            md-filled-button {
-                align-self: end;
-            }
-            .dialog-header {
-                font-weight: bold;
-                color: var(--md-sys-color-on-surface);
-            }
-            .onSuccess {
-                color: green;
-                text-align: center;
-            }
-        }
-    }
 }

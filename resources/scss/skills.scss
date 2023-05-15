@@ -1,0 +1,17 @@
+#card-skills {
+    text-align: center;
+    h2 {
+        font-size: 30px;
+        margin-top: 15px;
+    }
+    .skill-image {
+        width: 35px;
+        height: 35px;
+    }
+    .skill-card  span {
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
