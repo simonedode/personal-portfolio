@@ -13,11 +13,11 @@ export default function ContactDetails() {
         {path: mdiHome, value: t("Via Pastore n°26, Rimini, Italy")}
     ];
 
-    const iconButtons = ([
+    const iconButtons = [
         {id: 1, path: mdiGithub, href: "https://github.com/simonedode"},
         {id: 2, path: mdiLinkedin, href: "https://www.linkedin.com/in/simone-redighieri-b4aa31252"},
         {id: 3, path: mdiInstagram, href: "https://www.instagram.com/simone_dode"},
-    ]);
+    ];
 
     const social = iconButtons?.map((icon, key) =>
         <md-standard-icon-button key={key} href={icon.href}>

@@ -22,7 +22,6 @@ export default function NavBar(props) {
     const [isToggled, setToggled] = useState((localStorage.getItem("selected-theme") ?? "light") === "light");
     const [isScrollByButton, setScrollByButton] = useState(false);
 
-
     useEffect(() => {
         localStorage.setItem("selected-theme", isToggled ? "light" : "dark");
         document.querySelector("body").setAttribute("data-theme", localStorage.getItem("selected-theme"));
