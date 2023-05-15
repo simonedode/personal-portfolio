@@ -6,33 +6,41 @@
 :root {
     scroll-behavior: smooth;
 
-    --md-sys-color-primary: #1D005D;
-    --md-sys-color-on-primary: white;
-    --md-sys-color-surface: white;
-    --md-sys-color-on-surface: #1D005D;
-    --md-sys-color-on-surface-variant: #1D005D;
+    --md-sys-color-primary: #00629e;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #cfe5ff;
+    --md-sys-color-on-primary-container: #001d34;
+    --md-sys-color-surface: #fcfcff;
+    --md-sys-color-on-surface: #1a1c1e;
+    --md-sys-color-surface-variant: #dee3eb;
+    --md-sys-color-on-surface-variant: #42474e;
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-on-error: #ffffff;
 
     --bg-color: #F5F5F5;
-    --bg-secondary-color: white;
-    --text-color: #1D005D;
-    --text-secondary-color: rgba(0, 0, 0, 0.6);
-    --link-color: #006BCAE8;
-    --progress-bar-color: #009BCAE8;
+    --text-secondary-color: #42474e;
+    --link-color: #001d34;
+    --md-sys-color-surface-container: #fcfcff;
+    --md-sys-color-surface-container-highest: #F5F5F5;
 }
 
 [data-theme="dark"] {
-    --md-sys-color-primary: #0071A9;
-    --md-sys-color-on-primary: white;
-    --md-sys-color-surface: #282c34;
-    --md-sys-color-on-surface: white;
-    --md-sys-color-on-surface-variant: white;
+    --md-sys-color-primary: #9acbff;
+    --md-sys-color-on-primary: #003355;
+    --md-sys-color-primary-container: #004a79;
+    --md-sys-color-on-primary-container: #cfe5ff;
+    --md-sys-color-surface: #1f2224;
+    --md-sys-color-on-surface: #e2e2e5;
+    --md-sys-color-surface-variant: #42474e;
+    --md-sys-color-on-surface-variant: #c2c7cf;
+    --md-sys-color-error: #ffb4ab;
+    --md-sys-color-on-error: #690005;
+    --md-sys-color-surface-container: #1a1c1e;
+    --md-sys-color-surface-container-highest: #1f2224;
 
-    --bg-color: #17191d;
-    --bg-secondary-color: #383b42;
-    --text-color: white;
-    --text-secondary-color: #959393;
-    --link-color: #0e93c3;
-    --progress-bar-color: #0071A9;
+    --bg-color: #1a1c1e;
+    --text-secondary-color: #929397;
+    --link-color: #e2e2e5;
 }
 
 #home-card, #card-skills, #about, #contact {
@@ -54,8 +62,8 @@ body {
     transition: 0.3s linear;
     z-index: 40;
     background-color: var(--bg-color);
-    color: var(--text-color);
-    border: 1px var(--text-color) solid;
+    color: var(--md-sys-color-on-surface);
+    border: 1px var(--md-sys-color-on-surface) solid;
     #container-top {
         display: flex;
         justify-content: space-evenly;
@@ -73,7 +81,7 @@ body {
 #nav-profile {
     a {
         text-decoration: none;
-        color: var(--text-color);
+        color: var(--md-sys-color-on-surface);
     }
     a:nth-child(2) {
         width: 100%;
@@ -103,7 +111,7 @@ md-outlined-card {
 #home-card, #card-skills, #about, #contact{
     width: 90%;
     margin-left: 5%;
-    color: var(--text-color);
+    color: var(--md-sys-color-on-surface);
 }
 
 #home-card {
@@ -214,7 +222,7 @@ md-outlined-card {
             }
             .dialog-header {
                 font-weight: bold;
-                color: var(--text-color);
+                color: var(--md-sys-color-on-surface);
             }
             .onSuccess {
                 color: green;

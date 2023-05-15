@@ -37,7 +37,7 @@ export default function LanguagePicker() {
             <md-outlined-select hasLeadingIcon onInput={handleChangeLang} style={{minWidth: "auto"}} value={language}>
                 <div slot="leadingicon">{<Flag country={language === "en" ? "GB" : "IT"}/>}</div>
                 <div slot="trailingicon">{<Icon path={mdiTriangleSmallDown} size={1}/>}</div>
-                <md-select-option value="en" headline={t('English')} /*selected={language === "en"}*/>
+                <md-select-option value="en" headline={t('English')}>
                     <div slot="start" style={{marginLeft: "10px", marginTop: "2px"}}>
                         <Flag country="GB"/>
                     </div>

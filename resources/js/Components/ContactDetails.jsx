@@ -21,7 +21,7 @@ export default function ContactDetails() {
 
     const social = iconButtons?.map((icon, key) =>
         <md-standard-icon-button key={key} href={icon.href}>
-            <Icon path={icon.path} size={1} style={{"color": "var(--text-color)"}}/>
+            <Icon path={icon.path} size={1} style={{"color": "var(--md-sys-color-on-surface)"}}/>
         </md-standard-icon-button>
     );
 

@@ -7,7 +7,7 @@ export default function SkillCard(props) {
                 {props.name}
                 <img className="skill-image" src={props.src} alt=""/>
             </span>
-            <Line percent={props.percentage} strokeWidth={1} strokeColor={"var(--progress-bar-color)"} />
+            <Line percent={props.percentage} strokeWidth={1} strokeColor={"var(--md-sys-color-primary)"} />
         </div>
     )
 }

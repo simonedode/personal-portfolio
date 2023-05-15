@@ -13,7 +13,7 @@ export default function Contact() {
             <md-outlined-card id="contact">
                 <h1>{t("CONTACT")}</h1>
                 <h2>{t("Send me a message")}!
-                <Icon id="icon-rocket" path={mdiRocketLaunch} size={1} style={{"color": "var(--text-color)"}}/></h2>
+                <Icon id="icon-rocket" path={mdiRocketLaunch} size={1} style={{"color": "var(--md-sys-color-on-surface)"}}/></h2>
                 <div id="contact-container">
                     <FormContact />
                     <ContactDetails />

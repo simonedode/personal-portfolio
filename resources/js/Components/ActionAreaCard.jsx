@@ -16,7 +16,7 @@ export default function ActionAreaCard(props) {
                         image={props.path}
                         alt={props.alt}
                     />
-                    <CardContent sx={{background: "var(--bg-secondary-color)"}}>
+                    <CardContent sx={{background: "var(--bg-color)"}}>
                         <Typography gutterBottom variant="h6" component="div" color="var(--link-color)">
                             {props.title}
                         </Typography>

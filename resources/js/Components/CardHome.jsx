@@ -18,7 +18,7 @@ export default function CardHome(props) {
 
     const iconButtons = icons?.map(icon =>
         <md-standard-icon-button key={icon.id} href={icon.href}>
-            <Icon path={icon.path} size={1} style={{"color": "var(--text-color)"}}/>
+            <Icon path={icon.path} size={1} style={{"color": "var(--md-sys-color-on-surface)"}}/>
         </md-standard-icon-button>
     );
 
