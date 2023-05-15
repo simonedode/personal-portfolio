@@ -4,10 +4,11 @@ import '@material/web/iconbutton/standard-icon-button';
 import Icon from '@mdi/react';
 import {mdiGithub, mdiInstagram, mdiLinkedin} from "@mdi/js";
 import {useState} from "react";
+import {useLaravelReactI18n} from "laravel-react-i18n";
 
 export default function CardHome(props) {
 
-    const t = props.translate;
+    const { t } = useLaravelReactI18n();
 
     const [icons, setIcons] = useState([
         {id: 1, path: mdiGithub, href: "https://github.com/simonedode"},

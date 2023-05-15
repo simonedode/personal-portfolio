@@ -8,19 +8,19 @@ import {useLaravelReactI18n} from "laravel-react-i18n";
 
 export default function App() {
 
-    const { t, setLang, isLoaded } = useLaravelReactI18n();
+    const { t, isLoaded } = useLaravelReactI18n();
 
     const name = "Simone Redighieri";
     const avatar =  "/images/avatar.png";
 
     return (
         <>
-            { isLoaded() && <NavBar name={name} src={avatar} translate={t} setLang={(lang) => setLang(lang)} loaded={isLoaded()}/>}
+            { isLoaded() && <NavBar name={name} src={avatar} />}
             { isLoaded() && <CardHome name={name} info={t("Full Stack Web Developer | Engineer and Computer Science Student")}
-                      src={avatar} translate={t}/> }
-            { isLoaded() && <Skills translate={t}/> }
-            { isLoaded() && <About translate={t}/> }
-            { isLoaded() && <Contact translate={t}/> }
+                      src={avatar} /> }
+            { isLoaded() && <Skills /> }
+            { isLoaded() && <About /> }
+            { isLoaded() && <Contact /> }
         </>
     )
 }

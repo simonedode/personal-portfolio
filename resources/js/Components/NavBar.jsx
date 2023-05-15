@@ -4,10 +4,11 @@ import {useEffect, useState} from "react";
 import "@theme-toggles/react/css/Classic.css"
 import { Classic } from "@theme-toggles/react"
 import LanguagePicker from "./LanguagePicker";
+import {useLaravelReactI18n} from "laravel-react-i18n";
 
 export default function NavBar(props) {
 
-    const t = props.translate;
+    const { t } = useLaravelReactI18n()
 
     const buttons = [
         {id: 1, label: t("HOME"), href: "#home-card"},
@@ -67,7 +68,7 @@ export default function NavBar(props) {
                 </div>
                 <div className="container" grid-span={3} grid-align="middle">
                     <div id="container-top">
-                        <LanguagePicker translate={t} setLang={props.setLang} loaded={props.loaded}/>
+                        <LanguagePicker />
                         <Classic id="theme" duration={750} toggled={isToggled} toggle={setToggled}/>
                     </div>
                 </div>

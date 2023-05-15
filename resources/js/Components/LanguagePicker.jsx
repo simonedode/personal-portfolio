@@ -5,17 +5,17 @@ import "@material/web/select/select-option";
 import Flag from "react-flagkit";
 import Icon from "@mdi/react";
 import {mdiTriangleSmallDown} from "@mdi/js";
+import {useLaravelReactI18n} from "laravel-react-i18n";
 
-export default function LanguagePicker(props) {
+export default function LanguagePicker() {
 
-    const t = props.translate;
-    const setLang = props.setLang;
+    const { t, setLang, isLoaded } = useLaravelReactI18n();
 
     const { locale } = usePage().props;
     const [language, setLanguage] = useState(locale ?? "en");
 
     useEffect(() => {
-        if (props.loaded) {
+        if (isLoaded()) {
             setLang(language);
         }
     }, [language])

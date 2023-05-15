@@ -6,10 +6,11 @@ import Icon from "@mdi/react";
 import {useForm} from "@inertiajs/react";
 import {useEffect, useState} from "react";
 import {TextField} from "@mui/material";
+import {useLaravelReactI18n} from "laravel-react-i18n";
 
-export default function FormContact(props) {
+export default function FormContact() {
 
-    const t = props.translate;
+    const { t } = useLaravelReactI18n();
     const [isSuccess, setSuccess] = useState(false);
 
     const { data, setData, post, errors, reset } = useForm({

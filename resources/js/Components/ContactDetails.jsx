@@ -1,10 +1,11 @@
 import ContactDetailsItem from "./ContactDetailsItem";
 import {mdiEmail, mdiGithub, mdiHome, mdiInstagram, mdiLinkedin, mdiPhone} from "@mdi/js";
 import Icon from "@mdi/react";
+import {useLaravelReactI18n} from "laravel-react-i18n";
 
-export default function ContactDetails(props) {
+export default function ContactDetails() {
 
-    const t = props.translate;
+    const { t } = useLaravelReactI18n();
 
     const details = [
         {path: mdiEmail, value: "simonedode10@gmail.com"},

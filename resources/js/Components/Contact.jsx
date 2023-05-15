@@ -3,9 +3,10 @@ import FormContact from "./FormContact";
 import Icon from "@mdi/react";
 import {mdiRocketLaunch} from "@mdi/js";
 import ContactDetails from "./ContactDetails";
-export default function Contact(props) {
+import {useLaravelReactI18n} from "laravel-react-i18n";
+export default function Contact() {
 
-    const t = props.translate;
+    const { t } = useLaravelReactI18n();
 
     return (
         <>
@@ -14,8 +15,8 @@ export default function Contact(props) {
                 <h2>{t("Send me a message")}!
                 <Icon id="icon-rocket" path={mdiRocketLaunch} size={1} style={{"color": "var(--text-color)"}}/></h2>
                 <div id="contact-container">
-                    <FormContact translate={t}/>
-                    <ContactDetails translate={t}/>
+                    <FormContact />
+                    <ContactDetails />
                 </div>
             </md-outlined-card>
         </>

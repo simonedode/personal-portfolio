@@ -5,10 +5,11 @@ import React from "react";
 import ActionAreaCard from "./ActionAreaCard";
 import {mdiSchool} from "@mdi/js";
 import Icon from "@mdi/react";
+import {useLaravelReactI18n} from "laravel-react-i18n";
 
-export default function About(props) {
+export default function About() {
 
-    const t = props.translate;
+    const { t } = useLaravelReactI18n();
 
     return (
         <md-outlined-card class="container" id="about">
