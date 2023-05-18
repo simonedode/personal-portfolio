@@ -12,8 +12,8 @@ To run this application, you have to install:
 ## Installation
 To install this application, you have to clone this repository
 ```bash
-  git clone https://github.com/simonedode/my-website.git
-  cd my-website
+  git clone https://github.com/simonedode/personal-portfolio.git
+  cd personal-portfolio
   ```
 Then install the dependencies
 ```bash
