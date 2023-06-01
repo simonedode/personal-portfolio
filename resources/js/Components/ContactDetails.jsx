@@ -20,7 +20,7 @@ export default function ContactDetails() {
     ];
 
     const social = iconButtons?.map((icon, key) =>
-        <md-standard-icon-button key={key} href={icon.href}>
+        <md-standard-icon-button key={key} href={icon.href} selectedAriaLabel={"navigate to " + (icon.id === 1 ? "GitHub" : icon.id === 2 ? "Linkedin" : "Instagram")}>
             <Icon path={icon.path} size={1} style={{"color": "var(--md-sys-color-on-surface)"}}/>
         </md-standard-icon-button>
     );

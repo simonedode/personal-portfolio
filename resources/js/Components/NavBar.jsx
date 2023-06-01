@@ -9,6 +9,7 @@ import Icon from "@mdi/react";
 import {mdiClose, mdiMenu} from "@mdi/js";
 import "@material/web/menu/menu";
 import "@material/web/menu/menu-item-link";
+import "@material/web/iconbutton/outlined-icon-button"
 
 export default function NavBar(props) {
 
@@ -62,11 +63,11 @@ export default function NavBar(props) {
             <md-layout-grid>
                 <div id="nav-profile" grid-span-desktop={4} grid-span-phone={2} grid-span-tablet={4}>
                     <span id="open-menu">
-                        <md-outlined-icon-button toggle onClick={() => setMenuOpen(!isMenuOpen)}>
+                        <md-outlined-icon-button toggle onClick={() => setMenuOpen(!isMenuOpen)} selectedAriaLabel="open menu">
                             <Icon path={mdiMenu} size={1.3} />
                             <Icon path={mdiClose} size={1.3} slot="selectedIcon"/>
                         </md-outlined-icon-button>
-                        {/*TODO: open menu*/}
+                        {/*TODO: open menu and Accessibility*/}
                         <md-menu id="nav-menu" open={isMenuOpen}>
                             <md-menu-item-link header="Home" href="#home-card" />
                         </md-menu>

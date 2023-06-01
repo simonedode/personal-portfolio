@@ -3,7 +3,6 @@ import '@maicol07/material-web-additions/layout-grid/layout-grid';
 import '@material/web/iconbutton/standard-icon-button';
 import Icon from '@mdi/react';
 import {mdiGithub, mdiInstagram, mdiLinkedin} from "@mdi/js";
-import {useState} from "react";
 import {useLaravelReactI18n} from "laravel-react-i18n";
 
 const icons = [
@@ -17,7 +16,8 @@ export default function CardHome(props) {
     const { t } = useLaravelReactI18n();
 
     const iconButtons = icons?.map(icon =>
-        <md-standard-icon-button key={icon.id} href={icon.href}>
+        <md-standard-icon-button key={icon.id} href={icon.href}
+                                 selectedAriaLabel={"navigate to " + (icon.id === 1 ? "GitHub" : icon.id === 2 ? "Linkedin" : "Instagram")}>
             <Icon path={icon.path} size={1} style={{"color": "var(--md-sys-color-on-surface)"}}/>
         </md-standard-icon-button>
     );
