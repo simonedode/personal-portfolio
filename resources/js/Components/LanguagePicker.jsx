@@ -8,17 +8,23 @@ import {mdiTriangleSmallDown} from "@mdi/js";
 import {useLaravelReactI18n} from "laravel-react-i18n";
 
 export default function LanguagePicker() {
-
     const { t, setLang, isLoaded } = useLaravelReactI18n();
 
     const { locale } = usePage().props;
     const [language, setLanguage] = useState(locale ?? "en");
+    const [isPhoneDevice, setPhoneDevice] = useState(window.innerWidth < 600)
 
     useEffect(() => {
         if (isLoaded()) {
             setLang(language);
         }
     }, [language])
+
+    const controlScreenSize = () => {
+        setPhoneDevice(window.innerWidth < 600)
+    }
+
+    window.onresize = controlScreenSize
 
     const handleChangeLang = (e) => {
         e.preventDefault();
@@ -34,15 +40,16 @@ export default function LanguagePicker() {
 
     return (
         <>
-            <md-outlined-select hasLeadingIcon onInput={handleChangeLang} style={{minWidth: "auto"}} value={language}>
+            <md-outlined-select hasLeadingIcon onInput={handleChangeLang} style={{minWidth: "auto"}} value={language}
+                                displayText={!isPhoneDevice ? (language === "en" ? t('English') : t('Italian')) : ""}>
                 <div slot="leadingicon">{<Flag country={language === "en" ? "GB" : "IT"}/>}</div>
                 <div slot="trailingicon">{<Icon path={mdiTriangleSmallDown} size={1}/>}</div>
-                <md-select-option value="en" headline={t('English')}>
+                <md-select-option value="en" headline={isPhoneDevice ? "" : t('English')}>
                     <div slot="start" style={{marginLeft: "10px", marginTop: "2px"}}>
                         <Flag country="GB"/>
                     </div>
                 </md-select-option>
-                <md-select-option value="it" headline={t('Italian')} >
+                <md-select-option value="it" headline={isPhoneDevice ? "" : t('Italian')}>
                     <div slot="start" style={{marginLeft: "10px", marginTop: "2px"}}>
                         <Flag country="IT"/>
                     </div>

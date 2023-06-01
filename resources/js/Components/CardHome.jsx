@@ -25,10 +25,10 @@ export default function CardHome(props) {
     return (
         <md-outlined-card id="home-card">
             <md-layout-grid>
-                <div id="home-image" className="container" grid-span={6}>
+                <div id="home-image" className="container" grid-span-desktop={6} grid-span-tablet={8} grid-span-phone={4}>
                     <img className="profile" src={props.src} alt={t("profile image")}/>
                 </div>
-                <div className="container" grid-span={6}>
+                <div className="container" grid-span-desktop={6} grid-span-tablet={8} grid-span-phone={4}>
                     <h1>{props.name}</h1>
                     <h2>{props.info}</h2>
                     {iconButtons}

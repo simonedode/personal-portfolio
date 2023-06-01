@@ -9,6 +9,9 @@
     #container-top {
         display: flex;
         justify-content: space-evenly;
+        @include media("<=phone"){
+            justify-content: end;
+        }
     }
     #theme {
         color: var(--md-sys-color-on-surface);
@@ -19,7 +22,7 @@
             text-decoration: none;
             color: var(--md-sys-color-on-surface);
         }
-        a:nth-child(2) {
+        a:nth-of-type(2) {
             width: 100%;
         }
         display: flex;
@@ -33,4 +36,28 @@
             font-size: 20px;
         }
     }
+    #open-menu {
+        @include media(">desktop"){
+            display: none;
+        }
+        margin-right: 10%;
+    }
+    #navbar-buttons {
+        @include media("<=desktop"){
+            display: none;
+        }
+    }
+
+    #navbar-span {
+        @include media(">desktop") {
+            display: none;
+        }
+        @include media("<tablet") {
+            display: none;
+        }
+    }
+
+    /*md-menu:nth-of-type(1){
+        min-width: 100px !important;
+    }*/
 }

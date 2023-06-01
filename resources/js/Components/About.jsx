@@ -23,12 +23,16 @@ export default function About() {
                 <md-divider/>
             {/*TODO: sistemare il margin -3*/}
                 <h2>{t("INSTRUCTION")}{<Icon path={mdiSchool} size={1} style={{"marginBottom": "-3px"}}/>}</h2>
-                <div id="instruction">
+                <md-layout-grid id="instruction">
+                    <div grid-span-desktop={6} grid-span-tablet={4} grid-span-phone={4}>
                     <ActionAreaCard path="/images/serpieri.jpg" alt="" title={t("Scientific High School - Alessandro Serpieri")}
                                     body={t("2015 - 2020 | Completed")} href="https://www.liceoserpieri.it/"/>
+                    </div>
+                    <div grid-span-desktop={6} grid-span-tablet={4} grid-span-phone={4}>
                     <ActionAreaCard path="/images/alma-mater-studiorum.jpeg" alt="" title={t("Alma Mater Studiorum - Engineer and Computer Science")}
                                     body={t("2020 - | Earning")} href="https://corsi.unibo.it/laurea/IngegneriaScienzeInformatiche/index.html"/>
-                </div>
+                    </div>
+                </md-layout-grid>
         </md-outlined-card>
     )
 }

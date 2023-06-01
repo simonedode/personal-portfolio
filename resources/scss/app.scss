@@ -1,8 +1,12 @@
+@import "include-media";
+$breakpoints: (phone: 600px, tablet: 838px, desktop: 1024px);
+
 @import "navbar";
 @import "home";
 @import "skills";
 @import "about";
 @import "contact";
+
 
 * {
     margin: 0;

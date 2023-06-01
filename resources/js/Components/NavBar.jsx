@@ -5,6 +5,10 @@ import "@theme-toggles/react/css/Classic.css"
 import { Classic } from "@theme-toggles/react"
 import LanguagePicker from "./LanguagePicker";
 import {useLaravelReactI18n} from "laravel-react-i18n";
+import Icon from "@mdi/react";
+import {mdiClose, mdiMenu} from "@mdi/js";
+import "@material/web/menu/menu";
+import "@material/web/menu/menu-item-link";
 
 export default function NavBar(props) {
 
@@ -21,6 +25,8 @@ export default function NavBar(props) {
     const [lastScrollY, setLastScrollY] = useState(0);
     const [isToggled, setToggled] = useState((localStorage.getItem("selected-theme") ?? "light") === "light");
     const [isScrollByButton, setScrollByButton] = useState(false);
+
+    const [isMenuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         localStorage.setItem("selected-theme", isToggled ? "light" : "dark");
@@ -54,7 +60,17 @@ export default function NavBar(props) {
     return (
         <nav id="navbar" className={show ? "active" : "hidden"}>
             <md-layout-grid>
-                <div id="nav-profile" grid-span={3}>
+                <div id="nav-profile" grid-span-desktop={4} grid-span-phone={2} grid-span-tablet={4}>
+                    <span id="open-menu">
+                        <md-outlined-icon-button toggle onClick={() => setMenuOpen(!isMenuOpen)}>
+                            <Icon path={mdiMenu} size={1.3} />
+                            <Icon path={mdiClose} size={1.3} slot="selectedIcon"/>
+                        </md-outlined-icon-button>
+                        {/*TODO: open menu*/}
+                        <md-menu id="nav-menu" open={isMenuOpen}>
+                            <md-menu-item-link header="Home" href="#home-card" />
+                        </md-menu>
+                    </span>
                     <a href="#home-card" onClick={() => setScrollByButton(true)}>
                         <img className="profile" src={props.src} alt={t("alt")}/>
                     </a>
@@ -62,10 +78,11 @@ export default function NavBar(props) {
                         <h1>{props.name}</h1>
                     </a>
                 </div>
-                <div className="container" grid-span={6} grid-align="middle">
+                <div id="navbar-buttons" className="container" grid-span-desktop={5} grid-align="middle">
                     {navButtons}
                 </div>
-                <div className="container" grid-span={3} grid-align="middle">
+                <div id="navbar-span" grid-span-desktop={4}></div>
+                <div className="container" grid-span-desktop={3} grid-span-phone={2} grid-span-tablet={4} grid-align="middle">
                     <div id="container-top">
                         <LanguagePicker />
                         <Classic id="theme" duration={750} toggled={isToggled} toggle={setToggled}/>

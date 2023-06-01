@@ -11,10 +11,17 @@
         margin: 0 0 15px 0
     }
     #contact-container {
-        display: flex;
-        justify-content: space-around;
         #details {
             margin: 0 5%;
+            @include media ("<=tablet"){
+                display: flex;
+                justify-content: space-around;
+            }
+            span {
+                @include media("<=tablet"){
+                    display: table-cell;
+                }
+            }
             h3 {
                 font-size: 1.5em;
             }

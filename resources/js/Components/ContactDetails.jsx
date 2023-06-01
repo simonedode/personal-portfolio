@@ -27,10 +27,14 @@ export default function ContactDetails() {
 
     return (
         <div id="details">
-            <h3>{t("Contact Details")}</h3>
+            <span>
+                <h3>{t("Contact Details")}</h3>
                 {details.map((detail, key) => <ContactDetailsItem key={key} path={detail.path} value={detail.value}/>)}
-            <h3>{t("Social")}</h3>
-            {social}
+            </span>
+            <span>
+                <h3>{t("Social")}</h3>
+                {social}
+            </span>
         </div>
     )
 }
