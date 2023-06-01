@@ -50,7 +50,6 @@ export default function FormContact() {
                                     errorText={errors.email} required value={data.email} onInput={handleChange}/>
             <md-outlined-text-field label={t("SUBJECT")} id="subject" required error={errors.subject} errorText={errors.subject}
                                     value={data.subject} onInput={handleChange}/>
-            {/*TODO: html=contenteditable*/}
             {/*Waiting textField multiline/textarea of m3*/}
             <TextField style={{"marginBottom": "16px"}} id="body" label={t("BODY*")} fullWidth error={!!errors.body} helperText={errors.body}
                        multiline minRows={3} value={data.body} onInput={handleChange}/>

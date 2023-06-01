@@ -1,7 +1,6 @@
 import '@maicol07/material-web-additions/card/outlined-card';
 import '@maicol07/material-web-additions/layout-grid/layout-grid';
 import SkillCard from "./SkillCard";
-import {useState} from "react";
 import {useLaravelReactI18n} from "laravel-react-i18n";
 
 const skills = [

@@ -20,11 +20,9 @@ export default function LanguagePicker() {
         }
     }, [language])
 
-    const controlScreenSize = () => {
+    window.onresize = () => {
         setPhoneDevice(window.innerWidth < 600)
     }
-
-    window.onresize = controlScreenSize
 
     const handleChangeLang = (e) => {
         e.preventDefault();
