@@ -1,5 +1,5 @@
 import {router, usePage} from "@inertiajs/react";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import "@material/web/select/outlined-select";
 import "@material/web/select/select-option";
 import Flag from "react-flagkit";
@@ -13,12 +13,22 @@ export default function LanguagePicker() {
     const { locale } = usePage().props;
     const [language, setLanguage] = useState(locale ?? "en");
     const [isPhoneDevice, setPhoneDevice] = useState(window.innerWidth < 600)
+    const select = useRef(null)
 
     useEffect(() => {
         if (isLoaded()) {
             setLang(language);
         }
     }, [language])
+
+    useEffect(()=> {
+        if (select.current && select.current.shadowRoot) {
+            const shadowRoot = select.current.shadowRoot
+            if(shadowRoot.childNodes.length >= 3 && shadowRoot.childNodes[2].childNodes.length >= 8){
+                select.current.shadowRoot.childNodes[2].childNodes[7].style.minWidth = "152px"
+            }
+        }
+    })
 
     window.onresize = () => {
         setPhoneDevice(window.innerWidth < 600)
@@ -38,7 +48,7 @@ export default function LanguagePicker() {
 
     return (
         <>
-            <md-outlined-select hasLeadingIcon onInput={handleChangeLang} style={{minWidth: "auto"}} value={language}
+            <md-outlined-select hasLeadingIcon onInput={handleChangeLang} style={{minWidth: "auto"}} value={language} ref={select}
                                 displayText={!isPhoneDevice ? (language === "en" ? t('English') : t('Italian')) : ""}>
                 <div slot="leadingicon">{<Flag country={language === "en" ? "GB" : "IT"}/>}</div>
                 <div slot="trailingicon">{<Icon path={mdiTriangleSmallDown} size={1}/>}</div>
