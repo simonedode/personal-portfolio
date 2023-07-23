@@ -14,6 +14,7 @@ export default function LanguagePicker() {
     const [language, setLanguage] = useState(locale ?? "en");
     const [isPhoneDevice, setPhoneDevice] = useState(window.innerWidth < 600)
     const select = useRef(null)
+    const isSelectMount = useRef(false)
 
     useEffect(() => {
         if (isLoaded()) {
@@ -22,11 +23,9 @@ export default function LanguagePicker() {
     }, [language])
 
     useEffect(()=> {
-        if (select.current && select.current.shadowRoot) {
-            const shadowRoot = select.current.shadowRoot
-            if(shadowRoot.childNodes.length >= 3 && shadowRoot.childNodes[2].childNodes.length >= 8){
-                select.current.shadowRoot.childNodes[2].childNodes[7].style.minWidth = "152px"
-            }
+        if (!isSelectMount.current && select.current.shadowRoot.childNodes.length >= 3) {
+            select.current.shadowRoot.childNodes[2].childNodes[7].style.minWidth = "152px"
+            isSelectMount.current = true
         }
     })
 
