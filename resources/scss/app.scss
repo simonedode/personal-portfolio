@@ -11,6 +11,8 @@ $breakpoints: (phone: 600px, tablet: 838px, desktop: 1024px);
 * {
     margin: 0;
     padding: 0;
+    --_container-elevation: 3;
+    --md-navigation-drawer-modal-container-color: var(--md-sys-color-surface)
 }
 
 :root {
@@ -53,10 +55,6 @@ $breakpoints: (phone: 600px, tablet: 838px, desktop: 1024px);
     --link-color: #e2e2e5;
 }
 
-#home-card, #card-skills, #about, #contact {
-    margin-bottom: 30px;
-}
-
 body {
     background-color: var(--bg-color);
 }
@@ -82,7 +80,10 @@ md-outlined-card {
 #home-card, #card-skills, #about, #contact{
     width: 90%;
     margin-left: 5%;
+    margin-bottom: 30px;
     color: var(--md-sys-color-on-surface);
+    z-index: 0;
+    position: relative;
 }
 
 .container {
